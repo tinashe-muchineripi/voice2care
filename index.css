@@ -1,0 +1,309 @@
+:root {
+    --primaryColor: #6EC1E4;
+    --secondaryColor: #000000;
+    --textColor: #060101;
+    --backgroundColor: #F5F5F5;
+    --luminous-vivid-orange-color: #ff6900;
+    --luminous-orange-color: #ff6a00be;
+    --luminous-vivid-amber: #fcb900;
+    --secondaryBlue-color: #6ec1e468;
+    --bar-height: 3px;
+    --bar-width: 25px;
+    --hamburger-gap: 0.3em;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+    --animation-timing: 0.3s ease-in-out;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--backgroundColor);
+    font-family: Baskervville, sans-serif;
+}
+
+.container {
+    width: 100%;
+    overflow: hidden;
+}
+#header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: var(--backgroundColor);
+}
+
+.hamburger-menu {
+    --hamburgerX-width: calc(var(--hamburger-height)*1.41421356237);
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    z-index: 3;
+    cursor: pointer;
+    background-color: var(--primaryColor);
+    padding: .5em;
+    border-radius: .5em;
+}
+
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible {
+  border: 1px solid var(--secondaryColor);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--backgroundColor);
+    border-radius: 100em;
+    transform-origin: left center;
+    transition: opacity var(--animation-timing), width var(--animation-timing), transform var(--animation-timing);
+}
+
+.hamburger-menu input {
+    appearance: none;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before {
+    transform: rotate(45deg) translate(0, calc(var(--bar-height) / -2));
+    width: var(--hamburgerX-width);
+}
+
+.hamburger-menu:has(input:checked)::after {
+    transform: rotate(-45deg) translate(0, calc(var(--bar-height) / 2));
+    width: var(--hamburgerX-width);
+}
+
+.hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+}
+
+.navbar-container {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background-color: var(--primaryColor);
+    width: 50vw;
+    opacity: 0;
+    transform: translate(0);
+    transition: transform var(--animation-timing), opacity var(--animation-timing);
+    z-index: 10;
+    border-top-left-radius: 0.5em;
+    border-bottom-left-radius: 0.5em;
+    box-shadow: 0 0.5em 0.5em rgba(0, 0, 0, 0.5);
+}
+
+header nav ul .navbar-list {
+    border-bottom: .01em solid var(--backgroundColor);
+    font-size: 1.5em;
+    padding: 0.5em 1em;
+    margin: auto;
+    font-family: Raleway, sans-serif;
+}
+
+header nav ul .navbar-list:last-child {
+    border-bottom: none;
+}
+
+header nav ul .navbar-list a {
+    text-decoration: none;
+    color: var(--backgroundColor);
+}
+
+.hamburger-menu:has(input:checked) + #navbar > .navbar-container {
+    transform: translate(98%);
+    opacity: 1;
+}
+
+#logo-image {
+    width: 40vw;
+    padding-left: 0.5em;
+}
+
+main {
+    padding: .5em;
+    margin-top: 8vh;
+}
+
+.welcome-section {
+    background-image: url(./static-files/background-images.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: .5em 0;
+}
+
+.welcome-section header {
+    position: absolute;
+    top: 37%;
+    left: 3%;
+    display: flex;
+    flex-direction: column;
+    font-size: 5rem;
+    
+    text-shadow: .05em .05em var(--primaryColor);
+}
+
+.welcome-section p {
+    position: absolute;
+    top: 52%;
+    left: 3%;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.2rem;
+    font-weight: lighter;
+    text-shadow: .05em .05em var(--primaryColor);
+}
+
+.welcome-section p i {
+    color: var(--luminous-vivid-orange-color);
+    margin-right: .5em;
+}
+
+.welcome-section p span:last-of-type {
+    text-indent: 8%;
+}
+
+.welcome-section a {
+    position: absolute;
+    top: 85%;
+    left: 40%;
+    text-decoration: none;
+    background-color: var(--primaryColor);
+    padding: .5em;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    color: var(--textColor);
+    box-shadow: 0 0 1.2em .8em var(--backgroundColor);
+}
+
+.about-us {
+    margin: 1em 0 2em 0;
+}
+
+.about-us img {
+    width: 100%;
+}
+
+.about-us p {
+    font-size: 1.8rem;
+    text-align: justify;
+}
+
+.about-us a, .tile a{
+    text-decoration: none;
+    font-size: 1.5rem;
+    width: 40%;
+    background-color: var(--primaryColor);
+    padding: .5em;
+    color: var(--backgroundColor);
+    border-radius: .2em;
+    box-shadow: .25em .25em .1em var(--secondaryBlue-color);
+}
+
+.tile {
+    font-size: 1.8rem;
+    border: solid .01em var(--primaryColor);
+    padding: .5em;
+    border-radius: .5em;
+    margin: .5em 0;
+    text-align: justify;
+}
+
+.tile:first-of-type {
+    padding-bottom: 1em;
+}
+
+.tile header {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.tile img {
+    width: 100%;
+    border-radius: .5em;
+}
+
+.tile ul {
+    list-style-type: none;
+    margin: 1em 0;
+    padding: 0;
+    text-align: justify;
+}
+
+footer {
+    background: var(--primaryColor);
+    padding: .5em;
+    font-size: 2rem;
+}
+
+footer section:last-of-type {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.2rem;
+}
+
+footer section:last-of-type a {
+    text-decoration: none;
+    color: var(--textColor);
+}
+
+footer section:last-of-type a:hover {
+    color: var(--backgroundColor);
+}
+
+footer hr {
+    color: var(--backgroundColor);
+}
+
+footer section:first-of-type .footer-tile {
+    font-size: 1.6rem;
+    
+}
+
+footer section:first-of-type .footer-tile header {
+    font-size: 1.8rem;
+}
+
+footer section:first-of-type .footer-tile div i {
+    font-size: 1rem;
+    color: var(--backgroundColor);
+    padding: .5em;
+    margin-right: .5em;
+}
+
+footer section:first-of-type .footer-tile div:last-of-type {
+    display: flex;
+}
+footer section:first-of-type .footer-tile div address {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+
