@@ -302,6 +302,20 @@ footer section:first-of-type .footer-tile div address {
     flex-direction: column;
 }
 
+#faq-header {
+    font-size: 3rem;
+    padding: .5em;
+    text-align: center;
+    margin-bottom: .8em;
+}
+
+.faq-tile {
+    background: linear-gradient(var(--secondaryBlue-color) 0%, var(--primaryColor) 10%, var(--luminous-orange-color), var(--luminous-vivid-orange-color));
+    padding: .5em;
+    margin-bottom: .5em;
+    border-radius: .3em;
+}
+
 
 
 
