@@ -316,6 +316,44 @@ footer section:first-of-type .footer-tile div address {
     border-radius: .3em;
 }
 
+/*STYLING FOR ABOUT US PAGE*/
+#about-us {
+    margin-top: 8vh;
+    padding: .5em;
+    font-size: 2em;
+}
+
+#about-us header {
+    font-size: 4.5rem;
+    text-align: center;
+    margin: 1em auto;
+    padding: 3em auto;
+    background: url(./static-files/people-joining-hands-volunteers-wearing-mask-new-normal-1024x683.svg);
+    background-size: cover;
+    text-shadow: .08em .08em var(--primaryColor);
+}
+
+#about-us div {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    margin: 1em auto;
+}
+
+.values-tiles {
+    padding: .5em;
+    border: .01em solid var(--primaryColor);
+    box-shadow: 0em .2em  .05em var(--luminous-orange-color);
+    border-radius: .5em;
+}
+
+.values-tiles i {
+    color: var(--luminous-orange-color);
+    font-size: 4rem;
+    text-align: center;
+    padding: .5em;
+    text-shadow: .05em .05em var(--primaryColor);
+}
 
 
 
