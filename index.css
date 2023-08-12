@@ -128,6 +128,7 @@ header nav ul .navbar-list:last-child {
 header nav ul .navbar-list a {
     text-decoration: none;
     color: var(--backgroundColor);
+    display: block;
 }
 
 .hamburger-menu:has(input:checked) + #navbar > .navbar-container {
@@ -297,7 +298,7 @@ footer section:first-of-type .footer-tile div i {
 footer section:first-of-type .footer-tile div:last-of-type {
     display: flex;
 }
-footer section:first-of-type .footer-tile div address {
+footer section:first-of-type .footer-tile div address, .contact-tile address, .contact-tile #mobile-contacts {
     display: flex;
     flex-direction: column;
 }
@@ -323,7 +324,7 @@ footer section:first-of-type .footer-tile div address {
     font-size: 2em;
 }
 
-#about-us header, #services > header {
+#about-us header, #services > header , #contact > header {
     font-size: 4.5rem;
     text-align: center;
     margin: 1em auto;
@@ -374,6 +375,68 @@ footer section:first-of-type .footer-tile div address {
 #services .services-tile img {
     width: 100%;
     border-radius: .5em;
+}
+
+/*STYLING FOR THE CONTACT PAGE*/
+#contact {
+    margin-top: 8vh;
+    padding: .5em;
+    font-size: 2em;
+}
+
+#contact-form {
+    border: .01em solid var(--primaryColor);
+    padding: 1em;
+    border-radius: .5em;
+}
+
+#contact-form  header {
+    font-size: 3rem;
+    margin: .5em 0;
+}
+
+#contact-form label {
+    display: block;
+}
+
+#contact-form input {
+    display: block;
+    outline: var(--primaryColor);
+    width: 100%;
+    font-size: 1.5rem;
+    padding: .4em;
+    box-shadow: .2em 0.2em .01em var(--luminous-orange-color);
+    border: .01em solid var(--primaryColor);
+    margin-bottom: .5em;
+    border-radius: .2em;
+}
+
+#contact-form textarea {
+    border: .01em solid var(--primaryColor);
+    border-radius: .2em;
+    width: 100%;
+    box-shadow: .2em 0.2em .01em var(--luminous-orange-color);
+    margin-bottom: .5em;
+}
+
+.contact-tile {
+     display: flex;
+     flex-direction: row;
+     align-items: center;
+     gap: 1em;
+}
+
+.contact-tile i {
+    color: var(--primaryColor);
+    font-size: 4rem;
+}
+
+.contact-tile header {
+    font-weight: bold;
+}
+
+.contact-tab {
+    margin-bottom: 1.5em;
 }
 
 
