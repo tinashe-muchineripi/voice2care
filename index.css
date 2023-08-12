@@ -323,7 +323,7 @@ footer section:first-of-type .footer-tile div address {
     font-size: 2em;
 }
 
-#about-us header {
+#about-us header, #services > header {
     font-size: 4.5rem;
     text-align: center;
     margin: 1em auto;
@@ -353,6 +353,27 @@ footer section:first-of-type .footer-tile div address {
     text-align: center;
     padding: .5em;
     text-shadow: .05em .05em var(--primaryColor);
+}
+
+/*STYLING FOR SERVICES PAGE*/
+#services {
+    margin-top: 8vh;
+    padding: .5em;
+    font-size: 2em;
+}
+
+#services .services-tile {
+    border: .01em solid var(--primaryColor);
+    padding: .5em;
+    border-radius: .5em;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5em;
+} 
+
+#services .services-tile img {
+    width: 100%;
+    border-radius: .5em;
 }
 
 
