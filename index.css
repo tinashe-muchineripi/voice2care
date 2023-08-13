@@ -33,6 +33,7 @@ body {
     width: 100%;
     overflow: hidden;
 }
+
 #header {
     position: fixed;
     top: 0;
@@ -236,7 +237,7 @@ main {
     padding-bottom: 1em;
 }
 
-.tile header {
+.tile header, .faq-section header {
     font-size: 2rem;
     font-weight: bold;
 }
@@ -318,13 +319,13 @@ footer section:first-of-type .footer-tile div address, .contact-tile address, .c
 }
 
 /*STYLING FOR ABOUT US PAGE*/
-#about-us {
+#about_us {
     margin-top: 8vh;
     padding: .5em;
     font-size: 2em;
 }
 
-#about-us header, #services > header , #contact > header {
+#about_us header, #services > header , #contact > header {
     font-size: 4.5rem;
     text-align: center;
     margin: 1em auto;
@@ -334,7 +335,7 @@ footer section:first-of-type .footer-tile div address, .contact-tile address, .c
     text-shadow: .08em .08em var(--primaryColor);
 }
 
-#about-us div {
+#about_us div {
     display: flex;
     flex-direction: column;
     gap: .5em;
@@ -437,6 +438,155 @@ footer section:first-of-type .footer-tile div address, .contact-tile address, .c
 
 .contact-tab {
     margin-bottom: 1.5em;
+}
+
+@media screen and (min-width: 768px) {
+    main, #services, #contact, #about-us {
+        margin-top: 20vh;
+    }
+
+    .hamburger-menu {
+        top: 50%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 100%;
+    }
+    #header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #header #logo-image {
+        width: 15vw;
+    }
+    #header #navbar .navbar-container {
+        display: flex;
+        position: absolute;
+        top: 35%;
+        right: 0;
+        opacity: 1;
+        color: black;
+        box-shadow: unset;
+        background-color: var(--backgroundColor);
+    }
+
+    .hamburger-menu {
+        display: none;
+    }
+
+    header nav ul .navbar-list {
+        border-bottom: hidden;
+        padding: 1.5em .5em;
+
+    }
+
+    header nav ul .navbar-list a {
+        color: var(--primaryColor);
+        font-weight: bold;
+    }
+
+    header nav ul .navbar-list a:hover {
+        border-bottom: .01em solid var(--primaryColor);
+    }
+
+    header nav ul .navbar-list a:active {
+        color: var(--luminous-vivid-orange-color);
+    }
+
+    /*Styling for the home page*/
+    main {
+        margin-top: 6vh;
+    }
+    .about-us {
+        display: flex;
+        align-items: center;
+        margin: auto 5em;
+        gap: 2em;
+    }
+
+    .about-us img {
+        border-radius: .5em;
+    }
+
+    .services {
+        display: flex;
+        margin: 11em;
+        gap: 1em;
+    }
+
+    .tile {
+        width: 20vw;
+    }
+
+    .tile img {
+        width: 100%;
+    }
+
+    .faq-section {
+        font-size: 1.8rem;
+        padding: .5em;
+        border-radius: .5em;
+        text-align: justify;
+        margin: 5em;
+    }
+
+    .faq-section >  div {
+        display: flex;
+        gap: 1em;
+    }
+
+    /*styling for the about us page*/
+    #about_us .about_us_section {
+        display: flex;
+        flex-direction: column;
+        margin: auto 7em;
+    }
+    #about_us .values-tiles-container {
+        flex-direction: row;
+    }
+
+    .values-tiles {
+        width: 25vw;
+    }
+
+    /*styling for the services page*/
+    #services {
+        margin-top: 6vh;
+    }
+    #services section {
+        margin: auto 7em;
+    }
+
+    #services .services-tile {
+        align-items: center;
+        flex-direction: row;
+        gap: 1.5em;
+    } 
+
+    #services .services-tile img {
+        width: 40%;
+        border-radius: .5em;
+    }
+
+    /*styling for the contact page*/
+    #contact {
+        margin-top: 6vh;
+    }
+    #contact section {
+        margin: auto 7em;
+        display: flex;
+        gap: 1.5em;
+    }
+
+    #contact-form {
+        width: 65%;
+    }
 }
 
 
