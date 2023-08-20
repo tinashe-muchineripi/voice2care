@@ -163,7 +163,6 @@ main {
     display: flex;
     flex-direction: column;
     font-size: 5rem;
-    
     text-shadow: .05em .05em var(--primaryColor);
 }
 
@@ -497,6 +496,19 @@ footer section:first-of-type .footer-tile div address, .contact-tile address, .c
 
     header nav ul .navbar-list a:active {
         color: var(--luminous-vivid-orange-color);
+    }
+
+    .welcome-section header {
+        top: 25%;
+        font-size: 8rem;
+    }
+
+    .welcome-section p {
+        font-size: 3rem;
+    }
+
+    .welcome-section a {
+        left: 50%;
     }
 
     /*Styling for the home page*/
